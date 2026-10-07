@@ -60,12 +60,15 @@ input::placeholder,textarea::placeholder{color:rgba(234,234,234,0.32);}
 .sc-date{font-family:'Klaxon',system-ui,sans-serif;font-size:clamp(30px,6.4vw,46px);line-height:1;letter-spacing:0.05em;color:#FFFFFF;}
 .sc-date span{background:linear-gradient(135deg,#FFB4AE 0%,#F87F7D 55%,#D1534E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .sc-rule{height:2px;margin:18px 0 20px;background:linear-gradient(90deg,#F87F7D 0%,rgba(248,127,125,0.35) 45%,rgba(248,127,125,0) 100%);border-radius:2px;}
-.sc-meta{display:grid;grid-template-columns:repeat(3,1fr);}
-.sc-meta>div{padding:0 16px;border-left:1px solid rgba(234,234,234,0.14);}
+.sc-meta{display:flex;justify-content:space-between;}
+.sc-meta>div{padding:0 22px;border-left:1px solid rgba(234,234,234,0.14);}
+.sc-meta>div:last-child{padding-right:0;}
 .sc-meta>div:first-child{padding-left:0;border-left:none;}
 .sc-k{font-family:'Klaxon',system-ui,sans-serif;font-size:10px;letter-spacing:0.24em;color:#F87F7D;margin-bottom:7px;}
 .sc-v{font-size:15px;font-weight:700;color:#EAEAEA;white-space:nowrap;}
-@media(max-width:480px){.session-card{padding:22px 20px 20px;}.sc-chip{display:none;}.sc-day{font-size:12px;}.sc-meta{grid-template-columns:1fr;gap:12px;}.sc-meta>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 0 12px;border-left:none;border-bottom:1px solid rgba(234,234,234,0.1);}.sc-meta>div:last-child{padding-bottom:0;border-bottom:none;}.sc-k{margin-bottom:0;}}
+.sc-sep{font-style:normal;font-weight:400;color:rgba(248,127,125,0.75);margin:0 7px;}
+@media(max-width:640px){.sc-meta{flex-direction:column;gap:12px;}.sc-meta>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 0 12px;border-left:none;border-bottom:1px solid rgba(234,234,234,0.1);}.sc-meta>div:last-child{padding-bottom:0;border-bottom:none;}.sc-k{margin-bottom:0;}}
+@media(max-width:480px){.session-card{padding:22px 20px 20px;}.sc-chip{display:none;}.sc-day{font-size:12px;}.sc-v{font-size:14px;white-space:normal;text-align:right;}.sc-sep{margin:0 5px;}}
 @keyframes scIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
 @keyframes scShine{from{left:-60%;}to{left:130%;}}
 @media(prefers-reduced-motion:reduce){.session-card,.session-card::after{animation:none;}.session-card::after{display:none;}}
@@ -149,14 +152,14 @@ input::placeholder,textarea::placeholder{color:rgba(234,234,234,0.32);}
       <div class="form-fields">
         <div class="section-label">Votre session</div>
         <input type="hidden" name="session" value="Samedi 31 octobre 2026, 10h00 à 13h00" data-short="SAM. 31 OCT." data-label="Samedi 31 octobre">
-        <div class="session-card" role="group" aria-label="Session : samedi 31 octobre 2026, de 10h00 à 13h00, Lac 1, Tunis. Entrée gratuite.">
+        <div class="session-card" role="group" aria-label="Session : samedi 31 octobre 2026, de 10h00 à 13h00, Lac 1, Level 1, Tunis. Entrée gratuite.">
           <div class="sc-top"><span class="sc-eyebrow">Session unique</span><span class="sc-chip">Places limitées</span></div>
           <div class="sc-day">SAMEDI</div>
           <div class="sc-date"><span>31</span> OCTOBRE</div>
           <div class="sc-rule"></div>
           <div class="sc-meta">
             <div><div class="sc-k">HORAIRE</div><div class="sc-v">10h00 à 13h00</div></div>
-            <div><div class="sc-k">LIEU</div><div class="sc-v">Lac 1, Tunis</div></div>
+            <div><div class="sc-k">LIEU</div><div class="sc-v">Lac 1<i class="sc-sep">|</i>Level 1<i class="sc-sep">|</i>Tunis</div></div>
             <div><div class="sc-k">ENTRÉE</div><div class="sc-v">Gratuite</div></div>
           </div>
         </div>
